@@ -38,7 +38,7 @@ const Login = () => {
       const { email, password } = formData;
       await signInWithEmailAndPassword(auth, email, password);
       toast.success("login successfull")
-      router.push("/")
+      router.push("/posts")
     } catch (error) {
       setError(error.message);
     }
