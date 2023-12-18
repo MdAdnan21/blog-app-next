@@ -5,7 +5,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 import { MdPassword } from "react-icons/md";
 import { app } from "./Firebase";
-import Images from "./common/Images";
+// import Images from "./common/Images";
 import Image from "next/image";
 import { toast } from 'react-hot-toast';
 import { useRouter } from "next/navigation";
@@ -57,7 +57,7 @@ const Signup = () => {
           <div className="content">
             <div className="icons">
               <div className="symbols">
-                <Image width={300} height={300} src={Images.logo} alt="Logo" />
+                <Image width={300} height={300} src={"/Images/logo.png"} alt="Logo" />
                 <p>Logo</p>
               </div>
             </div>
@@ -66,7 +66,7 @@ const Signup = () => {
                 <Image
                   width={300}
                   height={300}
-                  src={Images.animate}
+                  src={"/Images/home.png"}
                   alt="Animate"
                 />
               </div>
@@ -155,7 +155,7 @@ const Signup = () => {
       </div>
       <div className="circle">
         <div className='Ellipse'>
-          <Image width={300} height={300} src={Images.full} alt="circle" />
+          <Image width={300} height={300} src={"/Images/full.png"}alt="circle" />
         </div>
       </div>
     </>

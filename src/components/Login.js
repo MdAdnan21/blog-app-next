@@ -50,13 +50,13 @@ const Login = () => {
           <div className="content">
             <div className="icons">
               <div className="symbols">
-                <Image width={300} height={300} src={Images.logo}alt="Logo" />
+                <Image width={300} height={300} src={"/Images/logo.png"} alt="Logo" />
                 <p>Logo</p>
               </div>
             </div>
             <div className="Notes">
               <div className="design">
-              <Image width={300} height={300}  src={Images.animate } alt="Animate" />
+              <Image width={300} height={300}  src={"/Images/home.png"} alt="Animate" />
               </div>
               <div className='login'>
                 <h3>Login to your Account</h3>
@@ -149,7 +149,7 @@ const Login = () => {
       </div>
       <div className="circle">
         <div className='Ellipse'>
-          <Image width={300} height={300} src={Images.full} alt='circle' />
+          <Image width={300} height={300} src={'/Images/full.png'} alt='circle' />
         </div>
       </div>
     </>
