@@ -20,7 +20,7 @@ const PostDetails = () => {
   }, []); // Fetch random post on component mount
 
   return (
-    <div style={{ backgroundColor: 'aliceblue', height: '100vh', margin: 'auto' }}>
+    <div style={{ backgroundColor: '#c1c1c1', height: '100vh', color: "#000000", fontSize: '19px',fontFamily: 'sans-serif', margin: 'auto' }}>
       {post ? (
         <>
           <h2 style={{margin: 'auto'}}>Post Details</h2>

@@ -5,6 +5,8 @@ import axios from 'axios';
 
 const PostsPage = () => {
   const [posts, setPosts] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const postsPerPage = 10;
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -19,30 +21,35 @@ const PostsPage = () => {
     fetchPosts();
   }, []);
 
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <>
-    <div  style={{ backgroundColor: 'white', height: '100vh', margin:"auto" }}>
-      <h2 style={{marginTop : "0px"}}>Posts</h2>
-      <ul>
-        {posts.map((post) => (
-          <li key={post.id}>
-            <Link href={`/posts/${post.id}`}>
-             {post.title}
-                         </Link>
-          </li>
-        ))}
-      </ul>
-      <div>
-        {Array.from({ length: Math.ceil(posts.length / 10) }, (_, index) => (
-          <button key={index + 1} onClick={() => console.log(index + 1)}>
-            {index + 1}
-          </button>
-        ))}
+      <div style={{ backgroundColor: 'rgb(191 191 191)', height: '100vh', fontSize: '22px', margin: 'auto', padding: '20px' }}>
+        <h2 style={{ marginTop: '0px' }}>Posts</h2>
+        <ul>
+          {currentPosts.map((post) => (
+            <li key={post.id}>
+              <Link href={`/posts/${post.id}`}>
+                {post.title}
+              </Link>
+            </li>
+          ))}
+        </ul>
+        <div>
+          {Array.from({ length: Math.ceil(posts.length / postsPerPage) }, (_, index) => (
+            <button key={index + 1} onClick={() => paginate(index + 1)}>
+              {index + 1}
+            </button>
+          ))}
+        </div>
       </div>
-    </div>
     </>
   );
 };
 
 export default PostsPage;
-

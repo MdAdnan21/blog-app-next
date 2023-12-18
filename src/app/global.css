@@ -161,16 +161,38 @@ display: none;
 }
 
 }
-@media (max-width: 575.98px) {
+@media screen and (max-width: 575px) {
 
 
   .Notes {
     margin-top: 15px;
 }
+
 .content{
-width: 70%;
-height: 90vh;
-margin-top: 35px;
+    height : 90vh;
+      width: 58%;
+  margin-top: 30px
+  }
+}
+@media screen and (max-width: 475px) {
+  .content{
+    height: 94vh;
+    width: 70%;
+    margin-top: 17px;
+  }
+}
+@media screen and (max-width: 430px) {
+  .content{
+height: 95vh;
+    width: 75%;
+    margin-top: 15px;
+}
+}
+@media screen and (max-width: 390px) {
+  .content{
+height: 95vh;
+    width: 78%;
+    margin-top: 15px;
 }
 }
 input:-webkit-autofill,
